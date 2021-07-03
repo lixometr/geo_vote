@@ -20,6 +20,7 @@ export class VoteService {
   ) {}
 
   async create(createVoteDto: CreateVoteDto, ip: string) {
+    console.log(ip);
     // validation
     const isExists = await this.voteRepository.find({ userIp: ip });
     // if (isExists.length)

@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
 } from '@nestjs/common';
 import { VoteService } from './vote.service';
 import { CreateVoteDto } from './dto/create-vote.dto';
@@ -24,13 +25,16 @@ export class VoteController {
   }
 
   @Get('answers')
-  getAnswers() {
+  getAnswers(@RealIP() ip: string, @Req() req: Request) {
+    console.log('ip - ', ip, '\n');
+    console.log('req - ', req);
     return this.voteService.getAnswers();
   }
 
   @Get('total')
   async totalCount() {
     const total = await this.voteService.getTotalCount();
+
     return { total };
   }
 
