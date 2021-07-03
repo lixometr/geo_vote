@@ -8,10 +8,10 @@ const app = createApp(App);
 
 app.use(Socketio, {
   connection:
-    process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/api",
+    process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/",
   options: {
     transports: ["websocket"],
-    path: "/api/socket.io",
+    // path: "/api/socket.io",
   },
 });
 
