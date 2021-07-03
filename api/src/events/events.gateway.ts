@@ -1,7 +1,6 @@
 import { WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
-import { from, Observable } from 'rxjs';
 import { Server } from 'socket.io';
-@WebSocketGateway()
+@WebSocketGateway({ path: '/api/socket.io' })
 export class EventsGateway {
   @WebSocketServer()
   server: Server;
