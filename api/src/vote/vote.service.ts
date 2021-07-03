@@ -64,7 +64,8 @@ export class VoteService {
   }
 
   async getTotalCount() {
-    const cnt = await this.voteRepository.count();
+    const items = await this.voteRepository.find();
+    const cnt = items.reduce((sum, item) => (sum += item.answers.length), 0);
     return cnt;
   }
 
