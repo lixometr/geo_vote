@@ -11,6 +11,7 @@ import {
 import { VoteService } from './vote.service';
 import { CreateVoteDto } from './dto/create-vote.dto';
 import { RealIP } from 'nestjs-real-ip';
+import { Request } from 'express';
 @Controller('vote')
 export class VoteController {
   constructor(private readonly voteService: VoteService) {}
