@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="pl-4 space-y-1">
+    <h2 class="text-center uppercase text-2xl mb-4">Как вы считаете, любят ли пингвины фрикадельки?</h2>
+    <div class="space-y-1">
       <Vote
         v-for="(vote, idx) in votes"
         :key="idx"
@@ -15,9 +16,10 @@
         py-2
         px-7
         bg-purple-600
-        rounded-md
+        rounded-sm
         shadow-sm
         text-white
+        mx-auto
       "
       @click="sendAnswers"
     >

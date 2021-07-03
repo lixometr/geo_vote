@@ -1,4 +1,4 @@
-<template>
+e<template>
   <div class="vote" :class="{active}" @click="$emit('update:active', !active)">
     {{ answer }}
   </div>
@@ -15,9 +15,9 @@ export default defineComponent({
 </script>
 <style lang="postcss">
 .vote {
-  @apply text-base py-2 px-2 cursor-pointer border border-transparent;
+  @apply text-base py-2 px-2 cursor-pointer border border-transparent bg-gray-300 rounded-md;
   &.active {
-    @apply border-purple-800;
+    @apply bg-purple-800 text-white;
   }
 }
 </style>

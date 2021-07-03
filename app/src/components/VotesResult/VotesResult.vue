@@ -1,13 +1,15 @@
 <template>
   <div>
-    {{ stats }}
+    <votes-result-chart :stats="stats" :answers="answers" />
   </div>
 </template>
 <script>
 import { useAppAxios } from "@/composables/useAppAxios";
-import { inject, ref } from "vue";
+import { computed, inject, ref } from "vue";
+import VotesResultChart from "./VotesResultChart.vue";
 
 export default {
+  components: { VotesResultChart },
   setup() {
     const { exec: _fetchStats, data: dataResult } = useAppAxios();
     const stats = ref({});
@@ -19,11 +21,20 @@ export default {
       stats.value = dataResult.value;
     };
     fetchStats();
+    const { exec: _fetchAnswers, data: answers } = useAppAxios();
+    const fetchAnswers = async () => {
+      await _fetchAnswers({
+        method: "GET",
+        url: "/vote/answers",
+      });
+    };
+    fetchAnswers();
     const socket = inject("socket");
     socket.on("voteStats", (newStats) => {
       stats.value = newStats;
     });
-    return { stats };
+    const statistics = computed(() => stats.value.stats || []);
+    return { stats, answers, statistics };
   },
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <votes-done v-if="hasAnswer"  :answers="chosenAnswers" :votes="votes" />
+  <div class="max-w-[600px] mx-auto">
+    <votes-done v-if="hasAnswer" :activeAnswers="chosenAnswers" :votes="votes" />
     <votes v-else @send="fetchUserResults" :votes="votes" />
-    <div>Всего ответов: {{ totalVotes }}</div>
+    <!-- <div class="mt-2 text-center">Всего ответов: {{ totalVotes }}</div> -->
   </div>
 </template>
 <script>
