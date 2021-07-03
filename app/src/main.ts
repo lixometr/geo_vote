@@ -11,6 +11,7 @@ app.use(Socketio, {
     process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/api",
   options: {
     transports: ["websocket"],
+    path: "/api/socket.io",
   },
 });
 
