@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "PFDinTextPro";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PFDinTextPro-Regular"),
+    url("~@/assets/fonts/PFDinTextPro/PFDinTextPro-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PFDinTextPro";
+  font-style: normal;
+  font-weight: bold;
+  src: local("PFDinTextPro-Bold"),
+    url("~@/assets/fonts/PFDinTextPro/PFDinTextPro-Bold.woff") format("woff");
+}
+
+
+
+@font-face {
+  font-family: "PFDinTextCompPro";
+  font-style: normal;
+  font-weight: bold;
+  src: local("PFDinTextCompPro"),
+    url("~@/assets/fonts/PFDinTextCompPro/PFDinTextCompPro-Bold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "PFDinTextCompPro";
+  font-style: normal;
+  font-weight: medium;
+  src: local("PFDinTextCompPro"),
+    url("~@/assets/fonts/PFDinTextCompPro/PFDinTextCompPro-Medium.ttf") format("opentype");
+}
