@@ -5,7 +5,6 @@ import { VoteModule } from './vote/vote.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { EventsModule } from './events/events.module';
-console.log(process.env.DB_USER);
 @Module({
   imports: [
     ConfigModule.forRoot(),

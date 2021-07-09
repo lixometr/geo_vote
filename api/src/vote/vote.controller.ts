@@ -28,7 +28,6 @@ export class VoteController {
   @Get('answers')
   getAnswers(@RealIP() ip: string, @Req() req: Request) {
     console.log('ip - ', ip, '\n');
-    console.log('req - ', req);
     return this.voteService.getAnswers();
   }
 
