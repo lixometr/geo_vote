@@ -1,15 +1,19 @@
 <template>
-  <div class="space-y-2">
-    <votes-done-answer
-      v-for="(vote, idx) in votes"
-      :key="idx"
-      v-bind="vote"
-      :active="
-        activeAnswers.findIndex((answer) => answer.answer === vote.id) > -1
-      "
-      :stat="statistics.find((item) => item.id === vote.id)"
-      :total="stats.total"
-    />
+  <div>
+    <div class="text-center font-medium mb-6">Результаты опроса</div>
+    <div class="space-y-3.5">
+      <votes-done-answer
+        v-for="(vote, idx) in votes"
+        :key="idx"
+        v-bind="vote"
+        :active="
+          activeAnswers.findIndex((answer) => answer.answer === vote.id) > -1
+        "
+        :stat="statistics.find((item) => item.id === vote.id)"
+        :total="stats.total"
+      />
+    </div>
+    <div class="text-sm uppercase mt-10 font-medium text-center">Благодарим за ваш голос!</div>
   </div>
 </template>
 <script>
@@ -48,4 +52,4 @@ export default defineComponent({
   },
 });
 </script>
-<style lang=""></style>
+<style lang="postcss"></style>

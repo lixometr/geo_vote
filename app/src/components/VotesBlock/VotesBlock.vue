@@ -1,7 +1,18 @@
 <template>
-  <div class="max-w-[600px] mx-auto">
-    <votes-done v-if="hasAnswer" :activeAnswers="chosenAnswers" :votes="votes" />
-    <votes v-else @send="fetchUserResults" :votes="votes" />
+  <div class="mt-[150px]">
+    <h2 class="max-w-[800px] mx-auto mb-4">
+      Какие из затронутых тем будут <span>лидирующими</span> в геологии на ваш
+      взгляд?
+    </h2>
+    <div class="max-w-[640px] mx-auto">
+      <votes-done
+        v-if="hasAnswer"
+        :activeAnswers="chosenAnswers"
+        :votes="votes"
+      />
+      <votes v-else @send="fetchUserResults" :votes="votes" />
+    </div>
+
     <!-- <div class="mt-2 text-center">Всего ответов: {{ totalVotes }}</div> -->
   </div>
 </template>
@@ -9,7 +20,7 @@
 import Votes from "@/components/Votes/Votes.vue";
 import { inject, ref, computed, nextTick } from "vue";
 import { useAppAxios } from "@/composables/useAppAxios";
-import VotesDone from '../Votes/VotesDone.vue';
+import VotesDone from "../Votes/VotesDone.vue";
 
 export default {
   components: { Votes, VotesDone },
@@ -53,7 +64,14 @@ export default {
       return !!chosenAnswers.value.length;
     });
 
-    return { totalVotes, totalData, hasAnswer, chosenAnswers, fetchUserResults, votes};
+    return {
+      totalVotes,
+      totalData,
+      hasAnswer,
+      chosenAnswers,
+      fetchUserResults,
+      votes,
+    };
   },
 };
 </script>

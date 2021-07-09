@@ -1,7 +1,10 @@
 <template>
   <div>
-    <h2 class="text-center uppercase text-2xl mb-4">Как вы считаете, любят ли пингвины фрикадельки?</h2>
-    <div class="space-y-1">
+    <div class="text-center font-medium mb-6">
+      Выберите один или несколько вариантов
+    </div>
+
+    <div class="space-y-3.5">
       <Vote
         v-for="(vote, idx) in votes"
         :key="idx"
@@ -11,19 +14,22 @@
     </div>
     <button
       class="
-        inline-block
-        mt-5
-        py-2
-        px-7
-        bg-purple-600
-        rounded-sm
-        shadow-sm
-        text-white
-        mx-auto
+        mt-11
+        w-full
+        bg-yellow-light
+        py-4
+        px-4
+        flex-center
+        uppercase
+        font-medium
+        hover:bg-yellow
+        transition-all
+        leading-none
+        text-sm
       "
       @click="sendAnswers"
     >
-      Отправить
+      <span>Проголосовать</span> <svgVoteCheckmark width="40" class="ml-5" />
     </button>
   </div>
 </template>
@@ -31,6 +37,7 @@
 import Vote from "@/components/Votes/Vote.vue";
 import { computed, defineComponent, inject, ref } from "vue";
 import { useAppAxios } from "@/composables/useAppAxios";
+import svgVoteCheckmark from "@/assets/icons/vote_checkmark.svg";
 export default defineComponent({
   props: {
     votes: {
@@ -38,7 +45,7 @@ export default defineComponent({
       default: () => [],
     },
   },
-  components: { Vote },
+  components: { Vote, svgVoteCheckmark },
   setup(props, { emit }) {
     const votes = computed(() => props.votes);
     const activeVotes = ref({});

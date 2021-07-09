@@ -1,0 +1,29 @@
+body,
+html {
+  @apply font-main text-base text-grey-dark leading-tight;
+}
+.container {
+  @apply max-w-[1230px] mx-auto px-[15px];
+}
+h1 {
+  @apply text-[64px] font-second font-bold;
+}
+h2 {
+  @apply text-[50px] font-second uppercase text-center;
+  span {
+    @apply text-yellow;
+  }
+}
+
+.t-fade-enter,
+.t-fade-leave-to {
+  @apply opacity-0;
+}
+
+.t-fade-enter-active, .t-fade-leave-active {
+  @apply transition-all;
+}
+
+.page-offset {
+  @apply pb-11;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3">
+  <div class="app">
     <router-view></router-view>
   </div>
 </template>
@@ -13,4 +13,6 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="postcss">
+/* @import "~@/assets/css/styles.css"; */
+</style>

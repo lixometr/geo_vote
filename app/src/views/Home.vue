@@ -1,27 +1,25 @@
 <template>
-  <div>
+  <div >
+    <home-header />
+    <home-speakers />
+    <home-broadcast  />
     <votes-block />
-    <div class="text-center">
-      <router-link
-        to="/result"
-        class="
-        
-          inline-block
-          mt-8
-          py-1.5
-          px-4
-          rounded-sm
-          border border-purple-600
-          hover:bg-purple-600 hover:text-white
-        "
-        >Показать результаты</router-link
-      >
-    </div>
+    <a-footer />
   </div>
 </template>
 <script>
 import VotesBlock from "@/components/VotesBlock/VotesBlock.vue";
+import HomeHeader from "@/components/Home/HomeHeader/HomeHeader.vue";
+import HomeSpeakers from "@/components/Home/HomeSpeakers/HomeSpeakers.vue";
+import HomeBroadcast from '@/components/Home/HomeBroadcast/HomeBroadcast.vue';
+import AFooter from '@/components/AFooter/AFooter.vue';
 export default {
-  components: { VotesBlock },
+  components: {
+     VotesBlock,
+    HomeHeader,
+    HomeSpeakers,
+    HomeBroadcast,
+    AFooter,
+  },
 };
 </script>
