@@ -2,18 +2,21 @@
   <div class="app">
     <router-view></router-view>
     <div
-      class="fixed top-0 left-0 right-0 bottom-0 bg-white z-50"
+      class="fixed top-0 left-0 right-0 bottom-0 bg-white z-50 flex-center"
       v-if="!isLoaded"
-    ></div>
+    >
+      <Spinner />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import Rellax from "rellax";
+import Spinner from "@/components/Spinner/Spinner.vue";
 export default defineComponent({
   name: "App",
-  components: {},
+  components: { Spinner },
   setup() {
     const isLoaded = ref(false);
     window.addEventListener("load", () => {

@@ -6,7 +6,7 @@
         <svgCircle class="speaker-card__image-circle" />
       </div>
       <div class="speaker-card__micro">
-        <svgMicrophone class="max-h-full max-w-full w-auto" />
+        <svgMicrophone class="max-h-full max-w-full w-full" />
       </div>
     </div>
     <div class="speaker-card__name">

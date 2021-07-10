@@ -1,11 +1,13 @@
 <template>
   <div class="results">
     <div class="container">
-      <img
-        src="@/assets/img/results_logo.jpg"
-        class="results__logo"
-        alt="logo"
-      />
+      <router-link to="/"
+        ><img
+          src="@/assets/img/results_logo.jpg"
+          class="results__logo"
+          alt="logo"
+        />
+      </router-link>
       <h2 class="mb-14 max-w-[920px] mx-auto">
         Какие из затронутых тем будут <br />
         <span>лидирующими</span> в геологии на ваш взгляд?
