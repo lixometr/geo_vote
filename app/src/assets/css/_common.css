@@ -2,6 +2,9 @@ body,
 html {
   @apply font-main text-base text-grey-dark leading-tight;
 }
+body {
+  @apply overflow-x-hidden;
+}
 .container {
   @apply max-w-[1240px] mx-auto px-[20px];
 }
