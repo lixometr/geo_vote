@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
-    <div class="container flex justify-between">
-      <div class="flex-1">
+    <div class="container flex justify-between md:flex-col md:items-center md:text-center">
+      <div class="flex-1 md:mb-10">
         <div class="max-w-[275px] mb-5">
           <strong class="font-bold mb-1 text-base"> АО «Росгеология» </strong>
           <div>
@@ -11,22 +11,22 @@
         </div>
         <div class="mb-7">
           <div>
-            Тел.: <a href="tel:+7 (495) 988-58-07">+7 (495) 988-58-07</a>,
-            <a href="tel:+7 (495) 988-58-09">+7 (495) 988-58-09</a>
+            Тел.: <a href="tel:+7 (495) 988-58-07" class="whitespace-nowrap">+7 (495) 988-58-07</a>,
+            <a href="tel:+7 (495) 988-58-09" class="whitespace-nowrap">+7 (495) 988-58-09</a>
           </div>
           <div>
-            Факс: <a href="tel:+7 (499) 271-97-60">+7 (499) 271-97-60</a>
+            Факс: <a href="tel:+7 (499) 271-97-60" class="whitespace-nowrap">+7 (499) 271-97-60</a>
           </div>
         </div>
         <div>
           Email: <a href="mailto:info@rusgeology.ru">info@rusgeology.ru</a>
         </div>
       </div>
-      <div class="flex-1 text-center">
-        <b class="block mb-4">Мы в социальных сетях</b>
+      <div class="flex-1 text-center md:mb-10">
+        <b class="block mb-4 font-third font-medium">Мы в социальных сетях</b>
         <div><a-footer-soc /></div>
       </div>
-      <div class="flex-1 text-right flex flex-col items-end">
+      <div class="flex-1 text-right flex flex-col items-end md:text-center md:items-center">
         <div class="mb-5">
           <b class="text-base block mb-1">Горячая линия </b>
           <div class="max-w-[300px]">
@@ -43,8 +43,8 @@
             <a href="mailto:hotline@rusgeology.ru">hotline@rusgeology.ru</a>
           </div>
         </div>
-        <div class="flex">
-          <a href="#" class="flex-y-center mr-7">
+        <div class="flex xs:flex-col">
+          <a href="#" class="flex-y-center mr-7 xs:mb-2 xs:mr-0">
             <svgDanger width="26" class="mr-2" />
             Информация о сайте
           </a>

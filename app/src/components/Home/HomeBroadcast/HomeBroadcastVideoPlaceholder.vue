@@ -7,7 +7,7 @@
       <home-broadcast-play @click="$emit('play')"/>
     </div>
     <div
-      class="text-lg text-white text-center absolute bottom-2 left-0 right-0"
+      class="text-lg text-white text-center absolute bottom-2 left-0 right-0 sm:text-sm sm:bottom-1"
     >
       Нажмите, чтобы воспроизвести
     </div>

@@ -14,19 +14,33 @@
     url("~@/assets/fonts/PFDinTextPro/PFDinTextPro-Bold.woff") format("woff");
 }
 
-
-
 @font-face {
   font-family: "PFDinTextCompPro";
   font-style: normal;
   font-weight: bold;
   src: local("PFDinTextCompPro"),
-    url("~@/assets/fonts/PFDinTextCompPro/PFDinTextCompPro-Bold.ttf") format("opentype");
+    url("~@/assets/fonts/PFDinTextCompPro/PFDinTextCompPro-Bold.ttf")
+      format("opentype");
 }
 @font-face {
   font-family: "PFDinTextCompPro";
   font-style: normal;
   font-weight: medium;
   src: local("PFDinTextCompPro"),
-    url("~@/assets/fonts/PFDinTextCompPro/PFDinTextCompPro-Medium.ttf") format("opentype");
+    url("~@/assets/fonts/PFDinTextCompPro/PFDinTextCompPro-Medium.ttf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "PF DinDisplay Pro";
+  src: url("~@/assets/fonts/PFDinDisplayPro/PFDinDisplayPro-Medium.eot");
+  src: local("PFDinDisplayPro-Medium"),
+    url("~@/assets/fonts/PFDinDisplayPro/PFDinDisplayPro-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("~@/assets/fonts/PFDinDisplayPro/PFDinDisplayPro-Medium.woff")
+      format("woff"),
+    url("~@/assets/fonts/PFDinDisplayPro/PFDinDisplayPro-Medium.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }

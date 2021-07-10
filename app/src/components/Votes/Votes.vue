@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center font-medium mb-6">
+    <div class="text-center font-medium mb-6 sm:max-w-[150px] mx-auto">
       Выберите один или несколько вариантов
     </div>
 
@@ -16,16 +16,17 @@
       class="
         mt-11
         w-full
-        bg-yellow-light
+        bg-yellow
+        rounded-md
         py-4
         px-4
         flex-center
         uppercase
         font-medium
-        hover:bg-yellow
+        hover:bg-yellow-light
         transition-all
         leading-none
-        text-sm
+        text-sm font-third
       "
       @click="sendAnswers"
     >

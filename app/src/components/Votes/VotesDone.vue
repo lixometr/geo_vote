@@ -13,7 +13,7 @@
         :total="stats.total"
       />
     </div>
-    <div class="text-sm uppercase mt-10 font-medium text-center">Благодарим за ваш голос!</div>
+    <div class="text-sm uppercase mt-10 font-medium text-center font-third">Благодарим за ваш голос!</div>
   </div>
 </template>
 <script>

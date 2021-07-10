@@ -9,7 +9,7 @@
       />
     </div>
     <Swiper v-bind="sliderOpts" class="home-speakers-slider__slider">
-      <SwiperSlide v-for="(item, idx) in items" :key="idx">
+      <SwiperSlide v-for="(item, idx) in items" :key="idx" class="md:!w-[350px]">
         <speaker-card v-bind="item" />
       </SwiperSlide>
     </Swiper>
@@ -29,19 +29,28 @@ import svgArrowRight from "@/assets/icons/arrow_right.svg";
 import speakersData from "./speakers-data";
 export default defineComponent({
   components: { Swiper, SwiperSlide, SpeakerCard, svgArrowLeft, svgArrowRight },
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+  },
   setup() {
-    const items = computed(() => {
-      return speakersData;
-    });
     const sliderOpts: SwiperOptions = {
-      slidesPerView: 3,
-      spaceBetween: 50,
+      slidesPerView: "auto",
+      spaceBetween: 40,
       navigation: {
         prevEl: ".home-speakers-slider__arrow-left",
         nextEl: ".home-speakers-slider__arrow-right",
       },
+      breakpoints: {
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
     };
-    return { items, sliderOpts };
+    return { sliderOpts };
   },
 });
 </script>
@@ -60,7 +69,7 @@ export default defineComponent({
     @apply ml-8;
   }
   &__slider {
-    @apply pb-24 !important;
+    @apply pb-24 px-12 -mx-12 md:px-0 md:mx-0 md:mr-[-20px]  !important;
   }
 }
 </style>

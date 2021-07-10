@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h2 class="max-w-[650px] mx-auto mb-5">
-      <span>онлайн-трансляция</span> скоро начнется, Присоединяйтесь
-    </h2>
+  <div class="sm:mt-[100px]">
+    <div class="container">
+      <h2 class="max-w-[650px] mx-auto mb-5 sm:max-w-[400px] sm:mb-8">
+        <span>онлайн-трансляция</span> скоро начнется, Присоединяйтесь
+      </h2>
+    </div>
     <div>
       <home-broadcast-video />
     </div>

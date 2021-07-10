@@ -23,26 +23,19 @@
         геологоразведке.
       </div>
     </div>
-    <div class="mt-7">
-      <div
-        class="home-header-description__plus"
-        :class="{ open: isOpen }"
-        @click="toggle"
-      >
-        <svgPlus width="16" />
-      </div>
-      <div class="home-header-description__read-full" @click="toggle">
-        Читать полнотсью
-      </div>
-    </div>
+    <show-full
+      class="mt-7 sm:mt-10"
+      :text="'Читать полнотсью'"
+      v-model:open="isOpen"
+    />
   </div>
 </template>
 
 <script lang="ts">
+import ShowFull from "@/components/ShowFull/ShowFull.vue";
 import { defineComponent, ref } from "vue";
-import svgPlus from "@/assets/icons/plus.svg";
 export default defineComponent({
-  components: { svgPlus },
+  components: { ShowFull },
   setup() {
     const isOpen = ref(false);
     const toggle = () => {
@@ -55,21 +48,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .home-header-description {
-  @apply text-grey-light text-lg max-w-[625px] mx-auto mt-6;
-  &__plus {
-    @apply w-[38px] h-[38px] mx-auto flex-center 
-    bg-yellow text-white transform transition-all duration-300 rounded-full
-    hover:bg-yellow-dark cursor-pointer;
-    &.open {
-      @apply rotate-45;
-    }
-  }
-  &__read-full {
-    @apply  mt-3 relative text-grey-light text-lg inline-block cursor-pointer hover:text-yellow transition-all;
-    &::before {
-      content: "";
-      @apply w-full h-[1px] bg-yellow block absolute bottom-0 left-0 right-9;
-    }
-  }
+  @apply text-grey-light text-lg max-w-[625px] mx-auto mt-6 sm:mt-[70px] sm:text-lg;
+  
 }
 </style>

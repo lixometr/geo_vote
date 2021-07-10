@@ -12,9 +12,7 @@
     <div class="speaker-card__name">
       {{ name }}
     </div>
-    <div class="speaker-card__position">
-      {{ position }}
-    </div>
+    <div class="speaker-card__position" v-html="position"></div>
   </div>
 </template>
 
@@ -37,7 +35,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .speaker-card {
-  @apply px-7 pb-[60px] flex-y-center flex-col text-center max-w-[355px];
+  @apply px-7 pb-[60px] flex-y-center flex-col text-center w-full max-w-[355px] sm:max-w-none relative;
   &::before {
     content: "";
     @apply block absolute top-[100px] bottom-0 left-0 right-0 
@@ -65,7 +63,7 @@ export default defineComponent({
         absolute right-4 bottom-4 p-2 transition-all;
   }
   &__name {
-    @apply mt-9 font-second text-[34px] font-medium leading-tight ;
+    @apply mt-9 font-second text-[34px] font-medium leading-tight;
   }
   &__position {
     @apply mt-3 italic text-base;

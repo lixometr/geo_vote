@@ -3,13 +3,13 @@ html {
   @apply font-main text-base text-grey-dark leading-tight;
 }
 .container {
-  @apply max-w-[1230px] mx-auto px-[15px];
+  @apply max-w-[1240px] mx-auto px-[20px];
 }
 h1 {
-  @apply text-[64px] font-second font-bold;
+  @apply text-[64px] font-second font-bold sm:text-[40px];
 }
 h2 {
-  @apply text-[50px] font-second uppercase text-center;
+  @apply text-[50px] font-second uppercase text-center sm:text-[36px];
   span {
     @apply text-yellow;
   }
@@ -26,4 +26,15 @@ h2 {
 
 .page-offset {
   @apply pb-11;
+}
+
+.draw-svg *{
+  stroke: #393939;
+  fill-opacity: 0;
+}
+
+.draw-svg.finished * {
+  transition: all 1s;
+  fill-opacity: 1;
+  stroke: transparent;
 }

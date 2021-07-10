@@ -10,16 +10,17 @@ module.exports = {
   mode: "jit",
   theme: {
     screens: {
-      xl: { max: '1450px' },
-      lg: { max: '1350px' },
-      md: { max: '992px' },
-      sm: { max: '760px' },
-      xs: { max: '550px' },
-      xxs: { max: '350px' },
+      xl: { max: "1450px" },
+      lg: { max: "1350px" },
+      md: { max: "992px" },
+      sm: { max: "760px" },
+      xs: { max: "550px" },
+      xxs: { max: "350px" },
     },
     fontFamily: {
       main: ["PFDinTextPro"],
       second: ["PFDinTextCompPro"],
+      third: ["PF DinDisplay Pro"],
     },
     colors: {
       white: "#fff",
@@ -32,7 +33,7 @@ module.exports = {
       yellow: {
         DEFAULT: "#F0BE32",
         dark: "#DDAF2D",
-        light: '#FFDB1C'
+        light: "#FFDB1C",
       },
       transparent: "transparent",
     },
