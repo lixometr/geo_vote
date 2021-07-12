@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center font-medium mb-6">Результаты опроса</div>
+    <div class="text-center font-medium mb-6 text-[#666666]">Результаты опроса</div>
     <div class="space-y-3.5">
       <votes-done-answer
         v-for="(vote, idx) in votes"

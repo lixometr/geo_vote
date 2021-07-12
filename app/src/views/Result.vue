@@ -12,7 +12,7 @@
         Какие из затронутых тем будут <br />
         <span>лидирующими</span> в геологии на ваш взгляд?
       </h2>
-      <div class="text-[24px] text-center font-medium font-third mb-10">
+      <div class="text-[24px] text-center font-medium mb-10 text-[#666666]">
         Результаты опроса
       </div>
       <votes-result />

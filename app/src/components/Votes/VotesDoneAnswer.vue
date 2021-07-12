@@ -11,6 +11,7 @@
         :style="{ width: percents + '%' }"
       ></div>
       <span class="relative z-30">{{ answer }}</span>
+      <svgCheckmark width="12" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#666666]" v-if="active" />
     </div>
 
     <div class="votes-done-answer__percents">{{ percents }}%</div>
@@ -18,8 +19,9 @@
 </template>
 <script>
 import { computed, defineComponent, toRefs } from "vue";
-
+import svgCheckmark from "@/assets/icons/checkmark.svg";
 export default defineComponent({
+  components: { svgCheckmark },
   inheritAttrs: false,
   props: {
     answer: String,
@@ -44,10 +46,10 @@ export default defineComponent({
 .votes-done-answer {
   @apply text-base relative flex-y-center;
   &__bar {
-    @apply relative bg-yellow-light text-center  rounded-md py-3 px-10 flex-1;
+    @apply relative bg-[#F3F3F3] text-center  rounded-md py-3 px-10 flex-1;
   }
   &__active-bar {
-    @apply absolute left-0 top-0 bottom-0 h-full bg-[#FFEA7A] rounded-tl-md rounded-bl-md z-20 transition-all;
+    @apply absolute left-0 top-0 bottom-0 h-full bg-yellow-light rounded-md z-20 transition-all;
   }
   &__percents {
     @apply font-medium text-lg w-[40px] ml-5;
