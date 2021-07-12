@@ -139,7 +139,7 @@ export default defineComponent({
       return opts;
     });
     const series = computed(() => {
-      const total = stats.value.total;
+      const total = stats.value.total || 0;
       const data = stats.value?.stats?.map((item) => {
         return Math.round((item.cnt / total) * 100);
       });
