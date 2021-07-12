@@ -141,6 +141,7 @@ export default defineComponent({
     const series = computed(() => {
       const total = stats.value.total || 0;
       const data = stats.value?.stats?.map((item) => {
+        if(total < 1) return 0
         return Math.round((item.cnt / total) * 100);
       });
       return [
