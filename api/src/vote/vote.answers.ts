@@ -27,7 +27,7 @@ export default [
     id: '6',
   },
   {
-    answer: 'Аналитика больших данных и Mashine learning ',
+    answer: 'Аналитика больших данных и Machine learning',
     id: '7',
   },
   {
