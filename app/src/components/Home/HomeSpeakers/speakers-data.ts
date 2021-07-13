@@ -61,7 +61,7 @@ export default [
   {
     image: require("@/assets/img/speakers/12.jpeg"),
     name: "Жухин Айдос Утегенович",
-    position: "Зала Аэро групп – Руководитель проектов",
+    position: "Зала Аэро групп <br> Руководитель проектов",
   },
   // {
   //   image: require("@/assets/img/speakers/11.jpeg"),
