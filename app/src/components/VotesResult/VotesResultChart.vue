@@ -156,7 +156,8 @@ export default defineComponent({
       const total = stats.value.total || 0;
       const data = stats.value?.stats?.map((item) => {
         if (total < 1) return 0;
-        return Math.round((item.cnt / total) * 100);
+        const result = (item.cnt / total) * 100;
+        return result.toFixed(2);
       });
       return [
         {
@@ -169,7 +170,13 @@ export default defineComponent({
       const total = stats.value.total || 0;
 
       const data = stats.value?.stats?.map((item) => {
-        const cnt = total < 1 ? 0 : Math.round((item.cnt / total) * 100);
+        let cnt = 0;
+        if (total < 1) {
+          cnt = 0;
+        } else {
+          const result = (item.cnt / total) * 100;
+          cnt = result.toFixed(2);
+        }
         const answer = answers.value.find((a) => a.id === item.id);
         return {
           cnt,

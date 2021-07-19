@@ -36,7 +36,7 @@ export default defineComponent({
     const { stat, total } = toRefs(props);
     const percents = computed(() => {
       const result = (stat.value.cnt / total.value) * 100;
-      return Math.round(result);
+      return result.toFixed(2);
     });
     return { percents };
   },

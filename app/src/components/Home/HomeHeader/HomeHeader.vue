@@ -4,7 +4,7 @@
       <div class="flex-center">
         <svgLogo class="home-header__logo" />
       </div>
-      <h3 class="home-header__date">15 июля 2021</h3>
+      <!-- <h3 class="home-header__date">15 июля 2021</h3> -->
       <div>
         <h1 class="home-header__title">С Днём рождения, Росгеология!</h1>
       </div>
@@ -45,7 +45,7 @@ export default {
     @apply font-bold text-[36px] font-second mt-14 sm:mt-[70px] sm:text-[24px] uppercase;
   }
   &__title {
-    @apply mt-9 max-w-[450px] mx-auto leading-none uppercase sm:mt-[70px];
+    @apply mt-12 max-w-[450px] mx-auto leading-none uppercase sm:mt-[70px];
   }
 }
 </style>
