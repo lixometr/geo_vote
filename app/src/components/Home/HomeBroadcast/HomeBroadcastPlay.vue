@@ -34,10 +34,10 @@ export default defineComponent({
     }
   }
   &__inner {
-    @apply w-[70px] h-[70px] bg-grey-dark flex-center rounded-full transition-all sm:w-[35px] sm:h-[35px];
+    @apply w-[70px] h-[70px] bg-yellow flex-center rounded-full transition-all sm:w-[35px] sm:h-[35px];
   }
   &__play {
-    @apply transition-all sm:w-[7px];
+    @apply transition-all sm:w-[7px] text-white;
   }
   &__circle {
     @apply absolute top-0 left-0 right-0 bottom-0 transform rotate-[45deg] transition-all duration-300;
@@ -49,7 +49,7 @@ export default defineComponent({
       /* stroke-dashoffset: 0; */
     }
     &__inner {
-      @apply bg-yellow;
+      @apply bg-yellow-light;
     }
     &__play {
       @apply text-white;
