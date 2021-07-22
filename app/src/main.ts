@@ -16,6 +16,8 @@ app.use(Socketio, {
   },
 });
 
+
+
 app.use(VueApexCharts);
 app.use(router);
 app.mount("#app");

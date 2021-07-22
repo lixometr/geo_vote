@@ -26,7 +26,8 @@
         hover:bg-yellow-light
         transition-all
         leading-none
-        text-sm font-third
+        text-sm
+        font-third
       "
       @click="sendAnswers"
     >
@@ -34,11 +35,12 @@
     </button>
   </div>
 </template>
-<script>
+<script lang="ts">
 import Vote from "@/components/Votes/Vote.vue";
 import { computed, defineComponent, inject, ref } from "vue";
 import { useAppAxios } from "@/composables/useAppAxios";
 import svgVoteCheckmark from "@/assets/icons/vote_checkmark.svg";
+import { useCookie } from "@vue-composable/cookie";
 export default defineComponent({
   props: {
     votes: {
@@ -58,12 +60,14 @@ export default defineComponent({
       const toSend = {
         answers,
       };
+
       await _sendAnswers({
         method: "POST",
         url: "/vote/",
         data: toSend,
       });
-      emit("send");
+      
+      emit("send", answers);
     };
     return { activeVotes, sendAnswers };
   },

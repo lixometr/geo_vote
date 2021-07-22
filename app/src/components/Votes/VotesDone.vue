@@ -7,11 +7,12 @@
         :key="idx"
         v-bind="vote"
         :active="
-          activeAnswers.findIndex((answer) => answer.answer === vote.id) > -1
+          activeAnswers.findIndex((answer) => answer === vote.id) > -1
         "
         :stat="statistics.find((item) => item.id === vote.id)"
         :total="stats.total"
       />
+      
     </div>
     <div class="text-sm uppercase mt-10 font-medium text-center font-third">Благодарим за ваш голос!</div>
   </div>
