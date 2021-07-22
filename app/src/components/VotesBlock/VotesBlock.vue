@@ -1,7 +1,6 @@
 <template>
   <div class="sm:mt-[150px]">
     <div class="container">
-      {{ chosenAnswers }}
       <h2 class="max-w-[800px] mx-auto mb-4">
         Какие из затронутых тем будут <span>лидирующими</span> в геологии на ваш
         взгляд?
@@ -12,7 +11,7 @@
           :activeAnswers="chosenAnswers"
           :votes="votes"
         />
-        <votes v-else @send="fetchUserResults" :votes="votes" />
+        <votes v-else @send="onSend" :votes="votes" />
       </div>
     </div>
   </div>
@@ -53,22 +52,29 @@ export default {
     const { exec: _fetchUserResults, data: userResultsData } = useAppAxios();
     const { cookie } = useCookie("vote_answers");
 
-    const fetchUserResults = async (answers) => {
-      cookie.value = answers.join(",");
+    const fetchUserResults = async () => {
       await _fetchUserResults({
         method: "GET",
         url: "/vote/current",
       });
     };
     fetchUserResults();
+    const onSend = (answers) => {
+      cookie.value = answers.join(",");
+      fetchUserResults();
+    };
     const chosenAnswers = computed(() => {
-      return cookie.value?.split(",") || [];
+      return (
+        cookie.value?.split(",") ||
+        []
+      );
     });
     const hasAnswer = computed(() => {
       return !!chosenAnswers.value.length;
     });
 
     return {
+      onSend,
       totalVotes,
       totalData,
       hasAnswer,
