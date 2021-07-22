@@ -50,7 +50,7 @@ export default {
       totalVotes.value = newTotalVotes;
     });
     const { exec: _fetchUserResults, data: userResultsData } = useAppAxios();
-    const { cookie } = useCookie("vote_answers");
+    const { cookie, setCookie } = useCookie("vote_answers");
 
     const fetchUserResults = async () => {
       await _fetchUserResults({
@@ -60,6 +60,12 @@ export default {
     };
     fetchUserResults();
     const onSend = (answers) => {
+      setCookie(answers.join(","), {
+        expires: 100,
+        path: '/',
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict'
+      })
       cookie.value = answers.join(",");
       fetchUserResults();
     };
